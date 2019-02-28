@@ -6,7 +6,7 @@ namespace PadawansTask11
     {
         public static int? FindIndex(double[] array, double accuracy)
         {
-            if (accuracy < 0 || accuracy > 1)
+            if (accuracy <= 0 || accuracy >= 1)
             {
                 throw new ArgumentException();
             }
@@ -14,6 +14,11 @@ namespace PadawansTask11
             if (array == null)
             {
                 throw new ArgumentNullException(nameof(array));
+            }
+
+            if(array.Length == 0)
+            {
+                throw new ArgumentException(); 
             }
 
             double sumRight = 0;
